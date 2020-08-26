@@ -4,6 +4,24 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const ResponsiveView = styled.div `
+    display: block;
+    @media (min-width: 1000px){
+        display:none;
+    }
+`
+
+const DesktopView = styled.div `
+    display: none;
+    @media (min-width: 1000px){
+        display: block;
+        background-image: url("./about-pic-3.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 700px;
+    }
+`
+
 const BackgroundImage = styled.div`
   background-image: url("./about-pic-3.jpg");
   height: 300px;
@@ -16,7 +34,33 @@ const BackgroundImage = styled.div`
     background-position: center;
     height: 40vh;
   }
-`;
+  @media (min-width: 800px){
+      height: 60vh;
+      background-position: bottom;
+  }
+`
+
+const Main1 = styled.h2 `
+    font-family: "Open Sans";
+    font-weight: 600; 
+    color: white;
+    font-size: 2.6em;
+    padding-top: 40px;
+`
+
+const FlexContainer = styled.div `
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+`
+
+const Description1 = styled.p `
+    font-family: "Open Sans";
+    color: white;
+    font-size: 1.7em;
+    padding: 0 100px;
+    margin-top: 150px;
+`
 
 const Description = styled.p`
   font-family: "Open Sans";
@@ -25,6 +69,9 @@ const Description = styled.p`
   @media (min-width: 600px) {
     font-size: 1.5em;
     margin-bottom: 60px;
+  }
+  @media (min-width: 800px){
+      padding-top: 30px;
   }
 `;
 
@@ -38,6 +85,9 @@ const Titles = styled.h3`
   @media (min-width: 600px){
       font-size: 2.2em;
   }
+  @media (min-width: 800px){
+      font-size: 2.4em;
+  }
 `;
 
 const Main = styled.h2`
@@ -48,6 +98,10 @@ const Main = styled.h2`
   @media (min-width: 600px) {
     font-size: 2.4em;
   }
+  @media (min-width: 800px){
+      margin-top: 40px;
+      font-size: 2.6em;
+  }
 `;
 
 const ImageWidth = styled.div`
@@ -56,12 +110,24 @@ const ImageWidth = styled.div`
   @media (min-width: 600px){
       height: 40vh;
   }
+  @media (min-width: 800px){
+      height: 60vh;
+  }
+  @media (min-width: 1000px){
+      height: 70vh;
+  }
 `;
 const ImageStyling = styled.img`
   width: 100%;
   height: auto;
   @media (min-width: 600px){
       height: 40vh;
+  }
+  @media (min-width: 800px){
+      height: 60vh;
+  }
+  @media (min-width: 1000px){
+      height: 70vh;
   }
 `;
 
@@ -72,6 +138,9 @@ const Graph = styled.div`
   height: 60vh;
   @media (min-width: 600px){
       height: 40vh;
+  }
+  @media (min-width: 800px){
+      height: 60vh;
   }
 `;
 
@@ -88,13 +157,28 @@ const About = () => {
   };
   return (
     <div>
+      <ResponsiveView>
       <Main>About Us</Main>
       <BackgroundImage></BackgroundImage>
       <Description>
         Seeking an alternative yet natural treatment to maintain your health?
-        We'll guide you and provide you with personalized results to meet your
+        We're here to help. We'll provide you with personalized results to meet your
         health needs.
       </Description>
+      </ResponsiveView>  
+
+      <DesktopView>
+      <Main1>About Us</Main1>
+      <FlexContainer>
+      <Description1>
+        Seeking an alternative yet natural treatment to maintain your health?
+    </Description1>
+    <Description1>
+        We're here to help. We'll provide you with personalized results to meet your
+        health needs.
+      </Description1>
+      </FlexContainer>
+      </DesktopView>
 
       <Titles>Who we are</Titles>
       <Slider {...settings}>
@@ -136,8 +220,8 @@ const About = () => {
       <Description>
         Once you have registered for an account, you'll be asked to fill out
         your personal profile.
-      </Description>
-      <Description>
+    <br/>
+    <br/>
         After we receive your profile, our machine learning tech will use the
         extensive data in our system to match you with the best strains, dosing
         and treatment methods for your needs.
