@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #064A53;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 2.3em; 
+  color: white;
+  font-family: "Cabin";
+}
+
+.logo-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 200px;
+  margin: 10px auto;
+}
+
+.logo-holder h1{
+  align-self: center;
+  margin-left:10px;
+}
+
+.App-header nav{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height:70px;
+  width: auto;
+  margin-top: 15px;
+  align-self: center;
+}
+
+nav a{
+  margin-left: 20px;
+  align-self: flex-end;
+  text-decoration: none;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 0.6em;
+}
