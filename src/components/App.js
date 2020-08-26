@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="logo-holder">
-        <img src="/medcab-logo.png" alt="cannabis leaf"/>
+        <img src="/medcab-logo.png" className="logo-green" alt="cannabis leaf"/>
         <h1>MedCabinet</h1>
         </div>
         <nav>

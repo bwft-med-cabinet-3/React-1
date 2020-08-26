@@ -35,7 +35,7 @@
   justify-content: center;
 }
 
-img {
+.logo-green {
   height:70px;
   width: auto;
   margin-top: 15px;
@@ -49,4 +49,23 @@ nav a{
   color: white;
   font-family: "Open Sans";
   font-size: 0.6em;
+}
+
+/* tablet sizing */
+@media (min-width: 600px){
+  .App-header{
+    flex-direction: row;
+  }
+
+  .App-header nav{
+    width: 100px;
+    justify-content: flex-end;
+    margin-right: 100px;
+  }
+
+  .logo-holder{
+    width: 100px;
+    margin-left: 100px;
+  }
+
 }
