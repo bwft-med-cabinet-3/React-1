@@ -15,14 +15,14 @@ function App() {
         </div>
         <nav>
           <div className="nav-links">
-            <Link to="/about">About</Link>
+            <Link to="/">About</Link>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
           </div>
         </nav>
       </header>
       <Switch>
-        <Route exact path="/about">
+        <Route exact path="/">
           <About />
         </Route>
         <Route exact path="/login">
