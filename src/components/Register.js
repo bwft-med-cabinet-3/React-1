@@ -146,10 +146,6 @@ const Register = ({setUserData}) => {
         console.log("error", error);
         debugger;
       })
-      .finally(() => {
-        console.log(user);
-        setRegisterValues(initialRegisterValues);
-      });
   };
 
   //functionaity to input info while validating registration form has all required info
@@ -252,6 +248,7 @@ const Register = ({setUserData}) => {
           <ReactDatePicker
             selected={registerValues.birthdate}
             onChange={updateBirthdate}
+            name="birthdate"
           />
         </DOB>
       </label>
@@ -294,7 +291,7 @@ const Register = ({setUserData}) => {
           onChange={onCheckboxChange}
         />
       </Checkbox>
-      <StyledButton disabled={disabled}>Register</StyledButton>
+      <StyledButton name="submit" disabled={disabled}>Register</StyledButton>
       <StyledRedirect>
         Already have an account?{" "}
         <NavLink
