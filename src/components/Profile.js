@@ -91,6 +91,26 @@ const Ailments = styled.div `
     }
 `
 
+const ProfileImage = styled.img `
+    width: 150px;
+    height: 150px;
+`
+
+const AvatarContainer = styled.div`
+    width: 40%;
+    height: 300px;
+        button{
+        margin-top: 30px;
+        background-color: white;
+        font-family: "Open Sans";
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+`
+
 const Profile = props => {
     const { userData } = props
 
@@ -110,10 +130,10 @@ const Profile = props => {
                     <p>Favorite Strains: Grandaddy Purple, Banana OG, Northern Lights</p>
                     <button>Update Info</button>
                 </ProfileDetails>
-                <DispensaryDiv>
-                    <h4>Dispensaries near you</h4>
-                    <img src="/dispensary.jpg" alt="inside view of Colorado dispensary"/>
-                </DispensaryDiv>
+                <AvatarContainer>
+                <ProfileImage src="/mc-avatar.png" alt="placeholder avatar"/>
+                <button>Change Photo</button>
+                </AvatarContainer>
             </ProfileContainer>
             <Ailments>
                 <h4>Personal Treatments for</h4>
@@ -121,6 +141,10 @@ const Profile = props => {
                 <p>Pain Management</p>
                 <button>Edit</button>
             </Ailments>
+            <DispensaryDiv>
+                    <h4>Dispensaries near you</h4>
+                    <img src="/dispensary.jpg" alt="inside view of Colorado dispensary"/>
+            </DispensaryDiv>
         </div>
     )
 }

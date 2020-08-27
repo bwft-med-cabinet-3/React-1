@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import moment from "moment";
+import Slider from "react-slick";
 
 const NewDashboardHeader = styled.h2 `
     margin-top: 50px;
@@ -16,11 +17,32 @@ const NewProfileContainer = styled.div `
     justify-content: space-evenly;
 
 `
-const NewDispensaryDiv = styled.div `
+
+const ProfileImage = styled.img `
+    width: 150px;
+    height: 150px;
+`
+
+const AvatarContainer = styled.div`
     width: 40%;
+    height: 300px;
+        button{
+        margin-top: 30px;
+        background-color: white;
+        font-family: "Open Sans";
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+`
+
+const NewDispensaryDiv = styled.div `
+    width: 100%100px;
 
     img {
-        width: 300px;
+        width: 90%;
         height: auto;
     }
 
@@ -28,20 +50,24 @@ const NewDispensaryDiv = styled.div `
         font-family: "Open Sans";
         font-size: 2.0em;
         margin-bottom: 25px;
+        font-weight: 600;
+        text-align: center;
     }
 `
 const Ailments = styled.div `
+
     font-family: "Open Sans";
     font-size: 1.4em;
     width: 60%;
     text-align: left;
-    margin-top: 40px;
-    background-color: #3D930B;
-    color: white;
+    margin: 40px auto;
+    /* background-color: #3D930B; */
+    /* color: white; */
     padding: 0 30px;
     padding-bottom: 50px;
     margin-left: 20px;
     border-radius: 10px;
+    border: 8px solid #3D930B;
 
     h4{
         font-size: 1.7em;
@@ -49,6 +75,7 @@ const Ailments = styled.div `
         text-align: center;
         font-weight: 600;
         padding-top: 10px;
+        border-bottom: 8px solid #3D930B;
     }
 
     button{
@@ -75,7 +102,7 @@ const NewProfileDetails = styled.div `
         font-size: 1.7em;
         margin-bottom: 25px;
         text-align: center;
-
+        font-weight: 600;
     }
 
     button{
@@ -103,6 +130,14 @@ const NewProfile = props => {
 
     const formattedDate = moment(birthday).format("MMMM Do, YYYY")
 
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3       
+    }
+
     return (
         <div>
             <NewDashboardHeader>{userData.username}'s Dashboard</NewDashboardHeader>
@@ -115,10 +150,10 @@ const NewProfile = props => {
                     <p>Favorite Strains: Grandaddy Purple, Banana OG, Northern Lights</p>
                     <button>Update Info</button>
                 </NewProfileDetails>
-                <NewDispensaryDiv>
-                    <h4>Dispensaries near you</h4>
-                    <img src="/dispensary.jpg" alt="inside view of Colorado dispensary"/>
-                </NewDispensaryDiv>
+                <AvatarContainer>
+                <ProfileImage src="/mc-avatar.png" alt="placeholder avatar"/>
+                <button>Change Photo</button>
+                </AvatarContainer>
             </NewProfileContainer>
             <Ailments>
                 <h4>Personal Treatments for</h4>
@@ -126,6 +161,32 @@ const NewProfile = props => {
                 <p>Pain Management</p>
                 <button>Edit</button>
             </Ailments>
+            <NewDispensaryDiv>
+                    <h4>Dispensaries near you</h4>
+                    <Slider {...settings}>
+          <div>
+            <img src="/dispensary.jpg" alt="Colorado Dispensary"/>
+          </div>
+          <div>
+          <img src="/dispensary2.png" alt="Marijuana Dispensary"/>
+          </div>
+          <div>
+          <img src="/dispensary3.jpg" alt="Local Dispensary"/>
+          </div>
+          <div>
+          <img src="/dispensary4.jpg" alt="Cannabis Dispensary"/>
+          </div>
+          <div>
+          <img src="/dispensary5.png" alt="Medical Marijuana Dispensary"/>
+          </div>
+          <div>
+          <img src="/dispensary6.png" alt="Marijuana Dispensary"/>
+          </div>
+          <div>
+          <img src="/dispensary7.jpg" alt="Marijuana Dispensary"/>
+          </div>
+        </Slider>
+            </NewDispensaryDiv>
         </div>
     )
 }
