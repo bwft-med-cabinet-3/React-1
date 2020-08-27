@@ -99,6 +99,10 @@ const NewProfile = props => {
         return null;
     }
 
+    const birthday = userData.birthdate
+
+    const formattedDate = moment(birthday).format("MMMM Do, YYYY")
+
     return (
         <div>
             <NewDashboardHeader>{userData.username}'s Dashboard</NewDashboardHeader>
@@ -107,7 +111,7 @@ const NewProfile = props => {
                     <h4>Profile Info</h4>
                     <p>Name: Jane Doe</p>
                     <p>Email: {userData.email}</p>
-                    <p>Birthdate: {userData.birthdate}</p>
+                    <p>Birthdate: {formattedDate}</p>
                     <p>Favorite Strains: Grandaddy Purple, Banana OG, Northern Lights</p>
                     <button>Update Info</button>
                 </NewProfileDetails>

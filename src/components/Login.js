@@ -4,8 +4,8 @@ import * as yup from "yup";
 import loginSchema from "./validation/loginSchema";
 import styled from "styled-components";
 import { NavLink, useHistory } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { f2bd } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { f2bd } from '@fortawesome/free-solid-svg-icons';
 
 const FormContainer = styled.form `
     display: flex;
