@@ -1,13 +1,96 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import * as yup from "yup";
+import { NavLink, useHistory } from "react-router-dom";
 import formSchema from "./validation/registrationSchema";
-// import styled from "styled-components";
+import styled from "styled-components";
 import ReactDatePicker from "react-datepicker";
 
-//styling
+const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 45px;
+  height: 575px;
+  box-shadow: 0 0 10px #262626;
+  background-color: #d6d6d6;
 
-// const DOBContainer = styled.div``;
+  h2 {
+    color: #064a53;
+    font-family: "Open Sans";
+    font-weight: 600;
+    padding: 20px 0;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+`;
+const InputField = styled.input`
+  width: 230px;
+  height: 40px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  font-family: "Open Sans";
+
+  &:hover {
+    border: 3px solid #3d930b;
+    background-color: white;
+    box-shadow: 0 0 1vw #3d930b;
+
+    &:focus {
+      border: 3px solid #3d930b;
+      background-color: white;
+      box-shadow: 0 0 1vw #3d930b;
+    }
+  }
+`;
+
+const StyledButton = styled.button`
+  width: 200px;
+  height: 40px;
+  font-family: "Open Sans";
+  font-size: 1.2em;
+  background-color: #3d930b;
+  border-radius: 5px;
+  border: 1px solid #165f10;
+  margin-bottom: 15px;
+  box-shadow: 0 0 1vw #165f10;
+
+  &:disabled {
+    background-color: #737473;
+    border: 1px solid black;
+    box-shadow: none;
+  }
+`;
+
+const StyledRedirect = styled.p`
+  font-family: "Open Sans";
+  margin-top: 10px;
+  padding: 0 30px;
+`;
+
+const Errors = styled.div`
+  margin-top: 30px;
+`;
+
+const DOB = styled.div`
+  padding: 10px 0;
+  font-family: "Open Sans";
+`;
+
+const StyledTerms = styled.h4`
+  font-family: "Open Sans";
+  margin-top: 15px;
+`;
+
+const Checkbox = styled.label`
+   font-family: "Open Sans";
+   margin: 10px 0; 
+`
 
 //set initial form shape and values
 const initialRegisterValues = {
@@ -31,11 +114,13 @@ const intialRegistered = [];
 //set submit button to disabled
 const disableButton = true;
 
-const Register = () => {
+const Register = ({setUserData}) => {
   const [registerValues, setRegisterValues] = useState(initialRegisterValues);
   const [newUsers, setNewUsers] = useState(intialRegistered);
   const [disabled, setDisabled] = useState(disableButton);
   const [registerErrors, setRegisterErrors] = useState(initialRegisterErrors);
+
+  const history = useHistory();
 
   //fetching current user list data
   const getUsers = () => {
@@ -54,7 +139,8 @@ const Register = () => {
     axios
       .post("https://reqres.in/api/users", user)
       .then((response) => {
-        setNewUsers([...newUsers, response.data]);
+        setUserData(response.data);
+        history.push("/new-profile");
       })
       .catch((error) => {
         console.log("error", error);
@@ -91,7 +177,7 @@ const Register = () => {
 
   //birthdate input
   const updateBirthdate = (birthdate) => {
-      updateRegisterInput('birthdate', birthdate);
+    updateRegisterInput("birthdate", birthdate);
   };
 
   //submit button functionality
@@ -131,53 +217,75 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={onSignUp}>
+    <FormContainer onSubmit={onSignUp}>
       <h2>Sign Up Here</h2>
-      <p>
-        Get personalized results on the best strains and dosing to fit your
-        needs.
-      </p>
       <label>
-        Username&nbsp;
-        <input
+        <InputField
           value={registerValues.username}
           onChange={onRegisterInput}
           name="username"
           type="text"
+          placeholder="Username"
         />
       </label>
       <label>
-        Email&nbsp;
-        <input
+        <InputField
           value={registerValues.email}
           onChange={onRegisterInput}
           name="email"
           type="email"
+          placeholder="Email"
         />
       </label>
       <label>
-        Password&nbsp;
-        <input
+        <InputField
           value={registerValues.password}
           onChange={onRegisterInput}
           name="password"
           type="password"
+          placeholder="Password"
         />
       </label>
       <label>
-        <div>
+        <DOB>
           Date of Birth&nbsp;
           <ReactDatePicker
             selected={registerValues.birthdate}
             onChange={updateBirthdate}
           />
-        </div>
+        </DOB>
       </label>
-      <h4>
+      <StyledTerms>
         By checking here you agree to MedCabinet's
-        <button>Privacy Policy</button> and <button>Terms of Use</button>.
-      </h4>
-      <label>
+        <button
+          style={{
+            fontFamily: "Open Sans",
+            fontSize: "1.0em",
+            color: "#3D930B",
+            textDecoration: "none",
+            fontWeight: "600",
+            border: "none",
+            backgroundColor: "#D6D6D6",
+          }}
+        >
+          Privacy Policy
+        </button>{" "}
+        and{" "}
+        <button
+          style={{
+            fontFamily: "Open Sans",
+            fontSize: "1.0em",
+            color: "#3D930B",
+            textDecoration: "none",
+            fontWeight: "600",
+            border: "none",
+            backgroundColor: "#D6D6D6",
+          }}
+        >
+          Terms of Use
+        </button>
+      </StyledTerms>
+      <Checkbox>
         I agree
         <input
           type="checkbox"
@@ -185,17 +293,30 @@ const Register = () => {
           checked={registerValues.terms}
           onChange={onCheckboxChange}
         />
-      </label>
-      <button disabled={disabled}>Register</button>
+      </Checkbox>
+      <StyledButton disabled={disabled}>Register</StyledButton>
+      <StyledRedirect>
+        Already have an account?{" "}
+        <NavLink
+          to="/register"
+          style={{
+            color: "#3D930B",
+            textDecoration: "none",
+            fontWeight: "600",
+          }}
+        >
+          Login here.
+        </NavLink>
+      </StyledRedirect>
 
-      <div className="errors">
+      <Errors className="errors">
         <div>{registerErrors.username}</div>
         <div>{registerErrors.password}</div>
         <div>{registerErrors.email}</div>
         <div>{registerErrors.birthdate}</div>
         <div>{registerErrors.terms}</div>
-      </div>
-    </form>
+      </Errors>
+    </FormContainer>
   );
 };
 

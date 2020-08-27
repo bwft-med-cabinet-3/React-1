@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 import About from "./About";
 import Login from "./Login";
 import Register from "./Register";
 import { Link, Route, Switch } from "react-router-dom";
+import Profile from "./Profile";
+import NewProfile from "./NewProfile";
 
 function App() {
+const [userData, setUserData] = useState(null)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,10 +30,16 @@ function App() {
           <About />
         </Route>
         <Route exact path="/login">
-          <Login />
+          <Login setUserData={setUserData} />
         </Route>
         <Route exact path="/register">
-          <Register />
+          <Register setUserData={setUserData} />
+        </Route>
+        <Route exact path="/profile">
+          <Profile userData={userData} />
+        </Route>
+        <Route exact path="/new-profile">
+          <NewProfile userData={userData} />
         </Route>
       </Switch>
     </div>
