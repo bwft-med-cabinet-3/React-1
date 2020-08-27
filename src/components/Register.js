@@ -27,6 +27,7 @@ const FormContainer = styled.form`
     margin-bottom: 20px;
   }
 `;
+
 const InputField = styled.input`
   width: 230px;
   height: 40px;
@@ -90,7 +91,7 @@ const StyledTerms = styled.h4`
 const Checkbox = styled.label`
    font-family: "Open Sans";
    margin: 10px 0; 
-`
+`;
 
 //set initial form shape and values
 const initialRegisterValues = {

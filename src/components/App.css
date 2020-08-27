@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #064A53;
+  background-color: #064a53;
   min-height: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  font-size: 2.3em; 
+  font-size: 2.3em;
   color: white;
   font-family: "Cabin";
 }
@@ -24,25 +24,25 @@
   margin: 10px auto;
 }
 
-.logo-holder h1{
+.logo-holder h1 {
   align-self: center;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
-.App-header nav{
+.App-header nav {
   width: 200px;
   display: flex;
   justify-content: center;
 }
 
 .logo-green {
-  height:70px;
+  height: 70px;
   width: auto;
   margin-top: 15px;
   align-self: center;
 }
 
-nav a{
+nav a {
   margin-left: 20px;
   align-self: flex-end;
   text-decoration: none;
@@ -52,20 +52,19 @@ nav a{
 }
 
 /* tablet sizing */
-@media (min-width: 600px){
-  .App-header{
+@media (min-width: 600px) {
+  .App-header {
     flex-direction: row;
   }
 
-  .App-header nav{
+  .App-header nav {
     width: 100px;
     justify-content: flex-end;
     margin-right: 100px;
   }
 
-  .logo-holder{
+  .logo-holder {
     width: 100px;
     margin-left: 100px;
   }
-
 }

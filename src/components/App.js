@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import About from "./About";
 import Login from "./Login";
@@ -8,14 +8,18 @@ import Profile from "./Profile";
 import NewProfile from "./NewProfile";
 
 function App() {
-const [userData, setUserData] = useState(null)
+  const [userData, setUserData] = useState(null);
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="logo-holder">
-        <img src="/medcab-logo.png" className="logo-green" alt="cannabis leaf"/>
-        <h1>MedCabinet</h1>
+          <img
+            src="/medcab-logo.png"
+            className="logo-green"
+            alt="cannabis leaf"
+          />
+          <h1>MedCabinet</h1>
         </div>
         <nav>
           <div className="nav-links">
