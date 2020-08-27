@@ -41,13 +41,25 @@ const Ailments = styled.div `
     padding: 0 30px;
     padding-bottom: 50px;
     margin-left: 20px;
+    border-radius: 10px;
 
     h4{
         font-size: 1.7em;
         margin-bottom: 25px;
         text-align: center;
         font-weight: 600;
+        padding-top: 10px;
+    }
 
+    button{
+        margin-top: 30px;
+        background-color: white;
+        font-family: "Open Sans";
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid black;
     }
 `
 
@@ -63,6 +75,19 @@ const NewProfileDetails = styled.div `
         font-size: 1.7em;
         margin-bottom: 25px;
         text-align: center;
+
+    }
+
+    button{
+        margin-top: 30px;
+        background-color: white;
+        font-family: "Open Sans";
+        width: 150px;
+        height: 30px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid black;
+
     }
 
 `

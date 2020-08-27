@@ -70,7 +70,7 @@ const StyledButton = styled.button`
 const StyledRedirect = styled.p`
   font-family: "Open Sans";
   margin-top: 10px;
-  padding: 0 30px;
+  padding: 0 40px;
 `;
 
 const Errors = styled.div`
@@ -298,7 +298,7 @@ const Register = ({setUserData}) => {
       <StyledRedirect>
         Already have an account?{" "}
         <NavLink
-          to="/register"
+          to="/login"
           style={{
             color: "#3D930B",
             textDecoration: "none",

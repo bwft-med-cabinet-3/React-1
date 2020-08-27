@@ -44,6 +44,51 @@ const ProfileDetails = styled.div `
         text-align: center;
     }
 
+    button{
+        margin-top: 30px;
+        background-color: white;
+        font-family: "Open Sans";
+        width: 150px;
+        height: 30px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid black;
+
+    }
+
+`
+
+const Ailments = styled.div `
+    font-family: "Open Sans";
+    font-size: 1.4em;
+    width: 60%;
+    text-align: left;
+    margin-top: 40px;
+    background-color: #3D930B;
+    color: white;
+    padding: 0 30px;
+    padding-bottom: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+
+    h4{
+        font-size: 1.7em;
+        margin-bottom: 25px;
+        text-align: center;
+        font-weight: 600;
+        padding-top: 10px;
+    }
+
+    button{
+        margin-top: 30px;
+        background-color: white;
+        font-family: "Open Sans";
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
 `
 
 const Profile = props => {
@@ -63,12 +108,19 @@ const Profile = props => {
                     <p>Email: applepie213@email.com</p>
                     <p>Birthdate: August 16, 1992</p>
                     <p>Favorite Strains: Grandaddy Purple, Banana OG, Northern Lights</p>
+                    <button>Update Info</button>
                 </ProfileDetails>
                 <DispensaryDiv>
                     <h4>Dispensaries near you</h4>
                     <img src="/dispensary.jpg" alt="inside view of Colorado dispensary"/>
                 </DispensaryDiv>
             </ProfileContainer>
+            <Ailments>
+                <h4>Personal Treatments for</h4>
+                <p>Anxiety</p>
+                <p>Pain Management</p>
+                <button>Edit</button>
+            </Ailments>
         </div>
     )
 }
