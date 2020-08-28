@@ -15,7 +15,7 @@ function App() {
       <header className="App-header">
         <div className="logo-holder">
           <img
-            src="/medcab-logo.png"
+            src="/md-logo.png"
             className="logo-green"
             alt="cannabis leaf"
           />
@@ -46,6 +46,7 @@ function App() {
           <NewProfile userData={userData} />
         </Route>
       </Switch>
+
     </div>
   );
 }

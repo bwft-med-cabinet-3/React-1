@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 const DashboardHeader = styled.h2`
   margin-top: 50px;
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-weight: 600;
   font-size: 3em;
 `;
@@ -16,6 +16,10 @@ const ProfileContainer = styled.div`
 `;
 const DispensaryDiv = styled.div`
   width: 100%;
+  margin-top: 50px;
+  background-color: #3d930b;
+  padding: 20px 0;
+  padding-bottom: 60px;
 
   img {
     width: 90%;
@@ -23,21 +27,22 @@ const DispensaryDiv = styled.div`
   }
 
   h4 {
-    font-family: "Open Sans";
+    font-family: "Noto Sans SC";
     font-size: 2em;
     margin-bottom: 25px;
+    font-weight: 600;
   }
 `;
 
 const ProfileDetails = styled.div`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-size: 1.4em;
   width: 40%;
   padding: 0 px;
   text-align: left;
 
   h4 {
-    font-family: "Open Sans";
+    font-family: "Noto Sans SC";
     font-size: 1.7em;
     margin-bottom: 25px;
     text-align: center;
@@ -46,7 +51,7 @@ const ProfileDetails = styled.div`
   button {
     margin-top: 30px;
     background-color: white;
-    font-family: "Open Sans";
+    font-family: "Noto Sans SC";
     width: 150px;
     height: 30px;
     font-size: 0.8em;
@@ -56,7 +61,7 @@ const ProfileDetails = styled.div`
 `;
 
 const Ailments = styled.div`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-size: 1.4em;
   width: 60%;
   text-align: left;
@@ -79,7 +84,7 @@ const Ailments = styled.div`
   button {
     margin-top: 30px;
     background-color: white;
-    font-family: "Open Sans";
+    font-family: "Noto Sans SC";
     width: 100px;
     height: 30px;
     font-size: 0.8em;
@@ -99,13 +104,27 @@ const AvatarContainer = styled.div`
   button {
     margin-top: 30px;
     background-color: white;
-    font-family: "Open Sans";
+    font-family: "Noto Sans SC";
     width: 100px;
     height: 30px;
     font-size: 0.8em;
     border-radius: 5px;
     border: 1px solid black;
   }
+`;
+
+const TreatmentCont = styled.div`
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  p {
+    color: black;
+  }
+`;
+
+const StyledFooter = styled.footer`
+  background-color: #323232;
+  height: 50px;
 `;
 
 const Profile = (props) => {
@@ -136,15 +155,17 @@ const Profile = (props) => {
           <button>Update Info</button>
         </ProfileDetails>
         <AvatarContainer>
-          <ProfileImage src="/mc-avatar.png" alt="placeholder avatar" />
+          <ProfileImage src="/avatar1.png" alt="placeholder avatar" />
           <button>Change Photo</button>
         </AvatarContainer>
       </ProfileContainer>
       <Ailments>
         <h4>Personal Treatments for</h4>
-        <p>Anxiety</p>
-        <p>Pain Management</p>
-        <button>Edit</button>
+        <TreatmentCont>
+          <p>Anxiety</p>
+          <p>Pain Management</p>
+          <button>Edit</button>
+        </TreatmentCont>
       </Ailments>
       <DispensaryDiv>
         <h4>Dispensaries near you</h4>
@@ -172,6 +193,7 @@ const Profile = (props) => {
           </div>
         </Slider>
       </DispensaryDiv>
+      <StyledFooter></StyledFooter>
     </div>
   );
 };

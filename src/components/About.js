@@ -41,7 +41,7 @@ const BackgroundImage = styled.div`
 `;
 
 const Main1 = styled.h2`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-weight: 600;
   color: white;
   font-size: 2.6em;
@@ -55,7 +55,7 @@ const FlexContainer = styled.div`
 `;
 
 const Description1 = styled.p`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   color: white;
   font-size: 1.7em;
   padding: 0 100px;
@@ -63,7 +63,7 @@ const Description1 = styled.p`
 `;
 
 const Description = styled.p`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   margin: 20px 20px;
   text-align: center;
   @media (min-width: 600px) {
@@ -76,10 +76,10 @@ const Description = styled.p`
 `;
 
 const Titles = styled.h3`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-weight: 600;
   font-size: 2em;
-  background-color: #064a53;
+  background-color: #3d930b;
   padding: 30px 0;
   color: white;
   @media (min-width: 600px) {
@@ -91,7 +91,7 @@ const Titles = styled.h3`
 `;
 
 const Main = styled.h2`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-weight: 600;
   font-size: 2em;
   margin-top: 20px;
