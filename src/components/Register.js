@@ -14,13 +14,13 @@ const FormContainer = styled.form`
   width: 300px;
   margin: 0 auto;
   margin-top: 45px;
-  height: 575px;
+  height: 600px;
   box-shadow: 0 0 10px #262626;
   background-color: #d6d6d6;
 
   h2 {
-    color: #064a53;
-    font-family: "Open Sans";
+    color: #323232;
+    font-family: "Noto Sans SC";
     font-weight: 600;
     padding: 20px 0;
     font-size: 2em;
@@ -35,7 +35,7 @@ const InputField = styled.input`
   margin-bottom: 20px;
   border-radius: 5px;
   background-color: whitesmoke;
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
 
   &:hover {
     border: 3px solid #3d930b;
@@ -53,7 +53,7 @@ const InputField = styled.input`
 const StyledButton = styled.button`
   width: 200px;
   height: 40px;
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   font-size: 1.2em;
   background-color: #3d930b;
   border-radius: 5px;
@@ -69,7 +69,7 @@ const StyledButton = styled.button`
 `;
 
 const StyledRedirect = styled.p`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   margin-top: 10px;
   padding: 0 40px;
 `;
@@ -80,16 +80,16 @@ const Errors = styled.div`
 
 const DOB = styled.div`
   padding: 10px 0;
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
 `;
 
 const StyledTerms = styled.h4`
-  font-family: "Open Sans";
+  font-family: "Noto Sans SC";
   margin-top: 15px;
 `;
 
 const Checkbox = styled.label`
-   font-family: "Open Sans";
+   font-family: "Noto Sans SC";
    margin: 10px 0; 
 `;
 
@@ -257,7 +257,7 @@ const Register = ({setUserData}) => {
         By checking here you agree to MedCabinet's
         <button
           style={{
-            fontFamily: "Open Sans",
+            fontFamily: "Noto Sans SC",
             fontSize: "1.0em",
             color: "#3D930B",
             textDecoration: "none",
@@ -271,7 +271,7 @@ const Register = ({setUserData}) => {
         and{" "}
         <button
           style={{
-            fontFamily: "Open Sans",
+            fontFamily: "Noto Sans SC",
             fontSize: "1.0em",
             color: "#3D930B",
             textDecoration: "none",
